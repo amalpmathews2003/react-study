@@ -20,18 +20,32 @@ import styles from'./AppStyle.module.css'
 import Form from './components/Form'
 import {Authenications} from './components/firebase_auth'
 import {TextGen} from './components/random_text_generater'
-/* import login from './components/login'
- import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
-<Router>
-<Switch>
-<Route exact path="/login" component={login}/>
-</Switch>
-</Router>*/
+
+import login from './components/login'
+import {BrowserRouter as Router,Route,Switch,Link,withRouter} from 'react-router-dom'
+
+import LifeCycleA from './components/lifeCycleA'
+import FragmentDemo from './components/FragmentDemo'
+import Table from './components/Table'
+import {Map} from './components/Map'
+import ImageGallary from './components/ImageGallary'
 function App() {
 
   return (
+    <Router>
     <div className="App">
-      
+      <ImageGallary/>
+      {/*<Map/>*/}
+      <Table/>
+      <FragmentDemo/>
+      <LifeCycleA/>
+      <hr/>
+      <Link to="/login">Login</Link>
+
+      <Switch>
+        <Route exact path="/login" component={withRouter(login)}></Route>
+      </Switch>
+     
       <TextGen/>
       <br/>
       <Authenications/>
@@ -61,6 +75,7 @@ function App() {
       <Welcome name="amal" heroName="Ironman" />
       <Message/>
     </div>
+     </Router>
     );
 }
 
