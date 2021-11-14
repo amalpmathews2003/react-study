@@ -1,6 +1,9 @@
 //import logo from './logo.svg';
+
 import './App.css';
-// import {Greet} from './components/Greet'
+import './AppStyle.css'
+import styles from'./AppStyle.module.css'
+import SideBar from './SideBar'
 import Greet from './components/Greet'
 import Welcome from './components/Welcome'
 import Message from './components/Message'
@@ -15,40 +18,26 @@ import UserGreeting from './components/UserGreeting'
 import NameList from './components/NameList'
 import StyleSheet from './components/StyleSheet'
 import Inline from './components/InlineStyle'
-import './AppStyle.css'
-import styles from'./AppStyle.module.css'
-import Form from './components/Form'
-import {Authenications} from './components/firebase_auth'
-import {TextGen} from './components/random_text_generater'
-
-import login from './components/login'
-import {BrowserRouter as Router,Route,Switch,Link,withRouter} from 'react-router-dom'
-
 import LifeCycleA from './components/lifeCycleA'
 import FragmentDemo from './components/FragmentDemo'
 import Table from './components/Table'
-import {Map} from './components/Map'
-import ImageGallary from './components/ImageGallary'
+import Form from './components/Form'
+
+
 function App() {
 
   return (
-    <Router>
+
     <div className="App">
-      <ImageGallary/>
-      {/*<Map/>*/}
+      <SideBar/>
       <Table/>
       <FragmentDemo/>
       <LifeCycleA/>
       <hr/>
-      <Link to="/login">Login</Link>
 
-      <Switch>
-        <Route exact path="/login" component={withRouter(login)}></Route>
-      </Switch>
+
      
-      <TextGen/>
       <br/>
-      <Authenications/>
       <br/>
       <Form/>
       <h1 className="error">error</h1>
@@ -75,7 +64,6 @@ function App() {
       <Welcome name="amal" heroName="Ironman" />
       <Message/>
     </div>
-     </Router>
     );
 }
 

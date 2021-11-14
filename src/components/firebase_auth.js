@@ -1,5 +1,6 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+
 //import 'firebase/compat/firestore';
 
 const firebaseConfig = {
@@ -34,9 +35,9 @@ export function Authenications(){
   	// 	<button onClick={()=>handleAuth(provider)} key={index}>fac3</button>)
 	return(
 		<div>
-			<button onClick={()=>handleAuth(facebookProvider)}>facebook</button>
-			<button onClick={()=>handleAuth(githubProvider)}>github</button>
-			<button onClick={()=>handleAuth(googleProvider)}>google</button>
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4" onClick={()=>handleAuth(facebookProvider)}>facebook</button>
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4" onClick={()=>handleAuth(githubProvider)}>github</button>
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4" onClick={()=>handleAuth(googleProvider)}>google</button>
 
 		</div>
 		)
